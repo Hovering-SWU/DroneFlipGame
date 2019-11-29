@@ -1,0 +1,72 @@
+<html>
+    <head>
+    <meta charset="UTF-8" />
+    <title>Timer</title>
+    <style>
+        #pic {
+            text-align: center;
+            padding: 25px 0px 0px 25px;
+        }
+        #timer {
+            text-align: center;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .button {
+            display: inline-block;
+            padding: 17px 30px;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #ff1a1a;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+        .button:hover {
+            background-color: #cc0000;
+        }
+        .button:active {
+            background-color: #cc0000;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+
+	<script language="JavaScript">
+	
+		var SetTime = 10;
+		function msg_time() {
+			
+			m = (SetTime % 60);
+			var msg = m;
+			document.getElementById("sec").innerHTML = msg;
+					
+			SetTime--;
+			
+			if (SetTime < 0) {
+				clearInterval(tid);
+				msg = "종료";
+                document.getElementById("sec").innerHTML = msg;
+                location.href="score.php";
+			}
+		}
+		
+	</script>
+
+</head>
+    <body>
+        <div id="pic">
+        <img src="mole1.png" width="200">
+        </div>
+        <div id="timer">
+            <h1 id="sec">게임 시작 버튼을 눌러주세요</h1>
+            <button class="start button" onClick="tid=setInterval('msg_time()',1000)">시작</button>
+        </div>
+    </body>
+</html>
