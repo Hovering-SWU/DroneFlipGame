@@ -24,9 +24,9 @@ void loop() {
   sendData("AT+CWMODE=3\r\n", 11000, DEBUG); //  access point
   sendData("AT+CIFSR\r\n", 7000, DEBUG); // get ip address
   sendData("AT+CIPMUX=1\r\n", 7000, DEBUG); // configure for multiple connections
-  sendData("AT+CIPSTART=4,\"TCP\",\"13.125.125.79\",52586\r\n", 5000, DEBUG); // turn on server on port 80
+  sendData("AT+CIPSTART=4,\"TCP\",\"13.125.125.79\",52859\r\n", 5000, DEBUG); // turn on server on port 52859
   
-  String web = "GET Drone-Whac-A-Mole/insert_score1.php?num=20";
+  String web = "GET /hovering/insert_score1.php?num=20";
  
   web += "HTTP/1.1\r\n";
   web += "Host: 13.125.125.79\r\n";
